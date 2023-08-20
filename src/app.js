@@ -26,7 +26,7 @@ function deckBuilder() {
     "Q",
     "K"
   ];
-  const suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
+  const suits = ["♦", "♥", "♠", "♣"];
   const cards = [];
 
   for (let s = 0; s < suits.length; s++) {
@@ -44,14 +44,9 @@ function randomCard(cards) {
   const cardValue = cards[random].value;
   const cardSuit = cards[random].suit;
 
-  let entity;
-  cardSuit === "Diamonds"
-    ? (entity = "&diams;")
-    : (entity = "&" + cardSuit.toLowerCase() + ";");
-
-  document.getElementsById("suitTop").innerHTML = cardSuit;
-  document.getElementsById("numberCenter").innerHTML = cardValue;
-  document.getElementsById("suitBottom").innerHTML = cardSuit;
+  document.getElementById("suitTop").innerHTML = cardSuit;
+  document.getElementById("numberCenter").innerHTML = cardValue;
+  document.getElementById("suitBottom").innerHTML = cardSuit;
 }
 
 const cards = deckBuilder();
